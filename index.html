@@ -1,0 +1,1009 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#681f35">
+  <title>Naura Nazneen | CV & Portofolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --maroon: #681f35;
+      --maroon-dark: #35121f;
+      --maroon-mid: #91465b;
+      --rose: #c58a98;
+      --pink: #ead7dc;
+      --cream: #fbf7f5;
+      --white: #fffdfc;
+      --ink: #35252b;
+      --muted: #78656b;
+      --line: #e8d9dd;
+      --shadow: 0 18px 45px rgba(77, 25, 43, .12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,253,252,.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(104,31,53,.1);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      color: var(--maroon);
+      font-weight: 700;
+      letter-spacing: .4px;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .84rem;
+      font-weight: 600;
+      color: #5b4149;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--maroon-mid);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--maroon);
+      border-radius: 12px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(120deg, #f8eef0 0%, #fbf7f5 55%, #ead7dc 100%);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      border: 1px solid rgba(104,31,53,.15);
+      right: -110px;
+      top: -100px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(197,138,152,.14);
+      right: 9%;
+      bottom: -150px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr .82fr;
+      align-items: center;
+      gap: 70px;
+      padding: 75px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: var(--maroon-mid);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: .75rem;
+      font-weight: 700;
+      margin-bottom: 17px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      color: var(--maroon-dark);
+      margin-bottom: 13px;
+    }
+
+    .hero h2 {
+      font-size: 1.08rem;
+      color: var(--maroon);
+      font-weight: 700;
+      margin-bottom: 19px;
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: var(--muted);
+      margin-bottom: 26px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: .9rem;
+      border: 1px solid var(--maroon);
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: var(--maroon);
+      color: white;
+      box-shadow: 0 8px 20px rgba(104,31,53,.18);
+    }
+
+    .btn-primary:hover {
+      background: var(--maroon-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--maroon);
+      background: rgba(255,255,255,.55);
+    }
+
+    .btn-outline:hover {
+      background: white;
+      transform: translateY(-2px);
+    }
+
+    .photo-wrap {
+      justify-self: center;
+      width: min(100%, 350px);
+      position: relative;
+      padding: 0 18px 18px 0;
+    }
+
+    .photo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 22px 0 0 22px;
+      background: var(--maroon);
+      border-radius: 18px;
+    }
+
+    .photo-frame {
+      position: relative;
+      padding: 10px;
+      background: var(--white);
+      border: 1px solid var(--pink);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-frame img {
+      display: block;
+      width: 100%;
+      height: 390px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 12px;
+      background: #ead7dc;
+      color: var(--maroon);
+    }
+
+    section {
+      padding: 86px 0;
+      scroll-margin-top: 75px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading .eyebrow {
+      margin-bottom: 9px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--maroon-dark);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    .section-heading h2::after {
+      content: "";
+      display: block;
+      width: 54px;
+      height: 3px;
+      border-radius: 4px;
+      background: var(--maroon-mid);
+      margin: 15px auto 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 35px;
+      align-items: stretch;
+    }
+
+    .about-card, .content-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 24px rgba(77,25,43,.045);
+    }
+
+    .about-card {
+      background: var(--maroon);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-card .big-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      line-height: 1;
+      color: #e9c6ce;
+      margin-bottom: 14px;
+    }
+
+    .about-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+
+    .about-card p {
+      color: #f2dfe4;
+    }
+
+    .content-card p {
+      color: var(--muted);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .info-item {
+      padding: 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .info-item span {
+      display: block;
+      font-size: .78rem;
+      color: var(--maroon-mid);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .info-item strong {
+      font-size: .97rem;
+      overflow-wrap: anywhere;
+    }
+
+    .soft-section {
+      background: #f3e8eb;
+    }
+
+    .timeline {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--maroon);
+      border-radius: 12px;
+      padding: 24px 27px;
+      box-shadow: 0 7px 20px rgba(77,25,43,.04);
+    }
+
+    .timeline-item .period {
+      color: var(--maroon-mid);
+      font-size: .8rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .timeline-item h3 {
+      color: var(--maroon-dark);
+      font-size: 1.12rem;
+      margin: 7px 0;
+    }
+
+    .timeline-item h4 {
+      color: var(--muted);
+      font-size: .93rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .timeline-item p, .timeline-item li {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .timeline-item ul {
+      padding-left: 20px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .skill-icon {
+      display: inline-flex;
+      width: 43px;
+      height: 43px;
+      align-items: center;
+      justify-content: center;
+      background: var(--pink);
+      color: var(--maroon);
+      border-radius: 12px;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .skill-card h3 {
+      color: var(--maroon-dark);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .contact-panel {
+      max-width: 850px;
+      margin: auto;
+      background: var(--maroon-dark);
+      border-radius: 20px;
+      padding: 38px;
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel > p {
+      color: #e6cdd4;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .contact-link {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 12px;
+      padding: 17px 12px;
+      text-align: center;
+      transition: .2s;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-link:hover {
+      background: rgba(255,255,255,.16);
+      transform: translateY(-3px);
+    }
+
+    .contact-link span {
+      display: block;
+      color: #e9c6ce;
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .contact-link strong {
+      font-size: .87rem;
+    }
+
+    footer {
+      background: #260d16;
+      color: #e8cbd3;
+      padding: 22px 0;
+      text-align: center;
+      font-size: .84rem;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+      background: var(--maroon);
+      color: white;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: .78rem;
+      }
+
+      .hero-grid {
+        gap: 35px;
+      }
+
+      .photo-frame img {
+        height: 340px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 15px 5% 20px;
+        background: var(--white);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 12px 20px rgba(53,18,31,.08);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 0;
+        font-size: .92rem;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 58px 0 65px;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .photo-wrap {
+        grid-row: 1;
+        width: min(78%, 300px);
+      }
+
+      .photo-frame img {
+        height: 330px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        padding: 27px 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: 90%;
+      }
+
+      h1 {
+        font-size: 2.55rem;
+      }
+
+      .hero h2 {
+        font-size: 1rem;
+      }
+
+      .photo-wrap {
+        width: min(84%, 300px);
+      }
+
+      .photo-frame img {
+        height: 300px;
+      }
+
+      .info-grid, .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-card, .content-card {
+        padding: 23px;
+      }
+
+      .timeline-item {
+        padding: 21px;
+      }
+
+      .btn {
+        flex: 1 1 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav container" aria-label="Navigasi utama">
+      <a class="brand" href="#beranda">Naura.</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang Saya</a></li>
+        <li><a href="#data-diri">Data Diri</a></li>
+        <li><a href="#pendidikan">Pendidikan</a></li>
+        <li><a href="#pengalaman">Pengalaman</a></li>
+        <li><a href="#keahlian">Keahlian</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- BERANDA -->
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">Curriculum Vitae & Portofolio</div>
+          <h1>Halo, saya<br>Naura Nazneen.</h1>
+          <h2>Mahasiswa Sistem Informasi</h2>
+
+          <p>
+            Saya adalah mahasiswa Sistem Informasi di Universitas Dian Nuswantoro
+            yang tertarik pada teknologi, pengembangan diri, dan pengalaman baru.
+            Saya senang belajar, bekerja sama, serta mengembangkan keterampilan
+            untuk masa depan.
+          </p>
+
+          <div class="buttons">
+            <a class="btn btn-primary" href="#tentang">Lihat Profil</a>
+            <a class="btn btn-outline" href="#kontak">Hubungi Saya ↗</a>
+          </div>
+        </div>
+
+        <div class="photo-wrap">
+          <div class="photo-frame">
+            <!-- Letakkan foto di folder yang sama dengan file HTML -->
+            <img
+              src="foto-naura.jpeg"
+              alt="Foto profil Naura Nazneen"
+              onerror="this.onerror=null;this.src='foto-naura.jpeg';"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG SAYA -->
+    <section id="tentang">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Kenali Saya</div>
+          <h2>Tentang Saya</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="big-mark">“</div>
+            <h3>Terus belajar, terus bertumbuh.</h3>
+            <p>
+              Saya percaya setiap pengalaman adalah kesempatan untuk belajar,
+              meningkatkan kemampuan, dan menjadi pribadi yang lebih baik.
+            </p>
+          </div>
+
+          <div class="content-card">
+            <p>
+              Perkenalkan, saya Naura Nazneen Khairunnisa, mahasiswa Program Studi
+              Sistem Informasi di Universitas Dian Nuswantoro. Saya merupakan
+              lulusan SMKN 3 Semarang dari jurusan Teknik Ketenagalistrikan.
+              Meskipun bidang studi saya sekarang berbeda dari jurusan sebelumnya,
+              saya memiliki semangat untuk terus belajar dan beradaptasi.
+            </p>
+
+            <br>
+
+            <p>
+              Saya pernah menjalani praktik kerja lapangan di PT PLN (Persero)
+              ULP Semarang Timur dan memiliki pengalaman kerja paruh waktu menjaga
+              stand es pisang ijo. Pengalaman tersebut membantu saya belajar
+              tentang kedisiplinan, tanggung jawab, komunikasi, dan pelayanan
+              kepada pelanggan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA DIRI -->
+    <section class="soft-section" id="data-diri">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Informasi Pribadi</div>
+          <h2>Data Diri</h2>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-item">
+            <span>Nama Lengkap</span>
+            <strong>Naura Nazneen Khairunnisa</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Status</span>
+            <strong>Mahasiswa</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Program Studi</span>
+            <strong>Sistem Informasi</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Perguruan Tinggi</span>
+            <strong>Universitas Dian Nuswantoro</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Asal Sekolah</span>
+            <strong>SMKN 3 Semarang</strong>
+          </div>
+
+          <div class="info-item">
+            <span>Jurusan SMK</span>
+            <strong>Teknik Ketenagalistrikan</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PENDIDIKAN -->
+    <section id="pendidikan">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Latar Belakang Akademik</div>
+          <h2>Pendidikan</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="period">2025 – Sekarang</div>
+            <h3>Universitas Dian Nuswantoro</h3>
+            <h4>Program Studi Sistem Informasi</h4>
+            <p>
+              Mempelajari bidang sistem informasi, teknologi, dan pengembangan
+              kemampuan digital.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="period">2022 – 2025</div>
+            <h3>SMK Negeri 3 Semarang</h3>
+            <h4>Teknik Ketenagalistrikan</h4>
+            <p>
+              Mempelajari dasar-dasar kelistrikan dan memperoleh pengalaman
+              praktik yang mendukung kedisiplinan serta keselamatan kerja.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="period">2020 – 2022</div>
+            <h3>SMP Negeri 29 Semarang</h3>
+            <h4>Sekolah Menengah Pertama</h4>
+          </article>
+
+          <article class="timeline-item">
+            <div class="period">2013 – 2019</div>
+            <h3>SD Negeri Sendangmulyo 03 Semarang</h3>
+            <h4>Sekolah Dasar</h4>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PENGALAMAN -->
+    <section class="soft-section" id="pengalaman">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Pengalaman Kerja</div>
+          <h2>Pengalaman</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="period">Praktik Kerja Lapangan</div>
+            <h3>PT PLN (Persero) ULP Semarang Timur</h3>
+            <h4>Bidang Ketenagalistrikan</h4>
+
+            <ul>
+              <li>Mendapatkan pengalaman kerja secara langsung di lingkungan perusahaan.</li>
+              <li>Mempelajari hal-hal terkait kelistrikan, khususnya arus listrik kuat.</li>
+              <li>Melatih kedisiplinan, tanggung jawab, dan kerja sama selama menjalani praktik kerja lapangan.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="period">Kerja Paruh Waktu · Part-Time</div>
+            <h3>Penjaga Stand Es Pisang Ijo</h3>
+            <h4>Durasi: Kurang lebih 6 bulan</h4>
+
+            <ul>
+              <li>Melayani pelanggan dan membantu proses penjualan produk.</li>
+              <li>Menjaga kebersihan serta kerapian stand.</li>
+              <li>Melatih komunikasi, tanggung jawab, dan kemampuan memberikan pelayanan kepada pelanggan.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEAHLIAN -->
+    <section id="keahlian">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Kemampuan</div>
+          <h2>Keahlian</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-icon">✦</div>
+            <h3>Microsoft Word</h3>
+            <p>Menyusun dan memformat dokumen untuk kebutuhan tugas maupun administrasi.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">✧</div>
+            <h3>Canva</h3>
+            <p>Membuat desain visual sederhana untuk presentasi dan kebutuhan konten.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">⌘</div>
+            <h3>Dasar Teknologi</h3>
+            <p>Memiliki ketertarikan untuk mempelajari teknologi dan pengembangan website.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">♡</div>
+            <h3>Komunikasi</h3>
+            <p>Berkomunikasi dengan pelanggan dan bekerja sama dengan orang lain.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">✓</div>
+            <h3>Tanggung Jawab</h3>
+            <p>Berusaha menyelesaikan tugas dengan disiplin dan sungguh-sungguh.</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">↗</div>
+            <h3>Adaptasi & Belajar</h3>
+            <p>Terbuka untuk belajar hal baru dan menyesuaikan diri dengan lingkungan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAK -->
+    <section class="soft-section" id="kontak">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Mari Terhubung</div>
+          <h2>Hubungi Saya</h2>
+        </div>
+
+        <div class="contact-panel">
+          <p>
+            Terima kasih sudah mengunjungi CV dan portofolio saya.
+            Silakan hubungi saya melalui salah satu kontak berikut.
+          </p>
+
+          <div class="contact-grid">
+            <a
+              class="contact-link"
+              href="https://www.instagram.com/nnralv._/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Instagram</span>
+              <strong>@nnralv._ ↗</strong>
+            </a>
+
+            <a
+              class="contact-link"
+              href="https://wa.me/6281818689398"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>WhatsApp</span>
+              <strong>+62 8181 8689 398 ↗</strong>
+            </a>
+
+            <a class="contact-link" href="mailto:narrnaz07@gmail.com">
+              <span>Email</span>
+              <strong>narrnaz07@gmail.com ↗</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Naura Nazneen Khairunnisa · CV & Portofolio
+    </div>
+  </footer>
+
+  <a class="back-top" href="#beranda" aria-label="Kembali ke atas">↑</a>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
